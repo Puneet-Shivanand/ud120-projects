@@ -41,8 +41,8 @@ features_train, labels_train, features_test, labels_test = makeTerrainData()
 ########################## SVM #################################
 ### we handle the import statement and SVC creation for you here
 from sklearn.svm import SVC
-from sklearn import svm
-clf = svm.SVC()
+
+clf = SVC(kernel="linear")
 
 
 #### now your job is to fit the classifier
@@ -50,9 +50,7 @@ clf = svm.SVC()
 #### make a set of predictions on the test data
 
 clf.fit(features_train, labels_train)
-SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3,
-gamma=0.0, kernel='rbf', max_iter=-1, probability=False, random_state=None,
-shrinking=True, tol=0.001, verbose=False)
+
 
 #### store your predictions in a list named pred
 
@@ -68,4 +66,6 @@ def submitAccuracy():
     return acc
 #########################################################
 
+
+submitAccuracy()
 
